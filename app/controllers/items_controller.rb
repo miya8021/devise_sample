@@ -9,11 +9,10 @@ class ItemsController < ApplicationController
   end
 
   def create
-    current_user.item.create!(item_params)
+    current_user.items.create!(item_params)
   end
 
   private
-
   def item_params
     params.require(:item).permit(:name, :price)
   end
